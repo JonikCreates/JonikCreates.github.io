@@ -1,12 +1,12 @@
 /* Theme variables and overrides.
-   Uses CSS variables; toggling .dark on :root switches theme.
-   Some selectors are specific so the theme overrides existing styles. */
+   Updated to improve light-mode contrast and remove unwanted text shadows.
+   Dark theme values unchanged; light theme text color made darker and shadows disabled. */
 
 :root {
-  /* Light theme defaults */
+  /* Light theme defaults — made darker for better contrast */
   --site-bg: #ffffff;
-  --text-color: #111827;
-  --muted-text: #555b6e;
+  --text-color: #0b1220;        /* darker, near-black for high contrast on white */
+  --muted-text: #4a5568;       /* slightly darker muted color */
   --sidebar-bg: #f4f6fa;
   --card-bg: #ffffff;
   --link-color: #1a73e8;
@@ -15,7 +15,7 @@
   --border-color: rgba(0,0,0,0.08);
 }
 
-/* Dark theme overrides */
+/* Dark theme overrides (unchanged) */
 :root.dark {
   --site-bg: #0b0d11;
   --text-color: #e6eef8;
@@ -28,14 +28,24 @@
   --border-color: rgba(255,255,255,0.06);
 }
 
-/* Apply variables site-wide (use fairly specific selectors to override main.css) */
+/* Apply variables site-wide (with !important to override main.css where needed) */
 html, body {
   background: var(--site-bg) !important;
   color: var(--text-color) !important;
   transition: background .25s ease, color .25s ease;
+  -webkit-font-smoothing: antialiased; /* crisper text on mac/safari */
+  -moz-osx-font-smoothing: grayscale;  /* crisper text on Firefox/mac */
+  text-rendering: optimizeLegibility;
 }
 
-/* Sidebar background */
+/* Remove any text-shadow that may be set in main.css */
+html, body, #content, #sidebar, .box, .post, .post-excerpt, .inner,
+p, span, li, a, h1, h2, h3, h4, h5, h6 {
+  text-shadow: none !important;
+  -webkit-text-stroke: 0 !important; /* guard against subtle strokes */
+}
+
+/* Sidebar background and color */
 #sidebar {
   background: var(--sidebar-bg) !important;
   color: var(--text-color) !important;
@@ -52,16 +62,20 @@ html, body {
 /* Headings and text */
 h1, h2, h3, h4, h5, h6 {
   color: var(--text-color) !important;
+  font-weight: 600; /* make headings more solid in light mode */
 }
 
 /* Muted text like descriptions */
-.text-style1, .muted, .byline, p {
+.text-style1, .muted, .byline {
   color: var(--muted-text) !important;
+  font-weight: 400;
 }
 
 /* Links and buttons */
 a, a:visited {
   color: var(--link-color) !important;
+  text-decoration-skip-ink: auto;
+  text-shadow: none !important;
 }
 
 .button {
@@ -88,8 +102,7 @@ a, a:visited {
   outline-offset: 2px;
 }
 
-/* Ensure images with white backgrounds stand out in dark mode (optional) */
-:root.dark img {
-  /* You can remove or tweak this if it affects content images */
-  filter: none;
+/* Keep images untouched in dark mode; remove any unexpected filters */
+img {
+  filter: none !important;
 }
