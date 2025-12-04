@@ -1,13 +1,13 @@
-/* Small theme toggle script.
+/* Theme toggle script
    - Stores preference in localStorage under 'site-theme'
-   - Applies .dark to :root for dark mode
-   - Uses prefers-color-scheme if no saved preference
+   - Toggles .dark on documentElement
+   - Button displays the word "Theme" as requested
 */
 
 (function () {
   const STORAGE_KEY = 'site-theme';
   const DARK_CLASS = 'dark';
-  const toggleId = 'theme-toggle';
+  const TOGGLE_ID = 'theme-toggle';
 
   function getStoredTheme() {
     try {
@@ -21,7 +21,7 @@
     try {
       localStorage.setItem(STORAGE_KEY, theme);
     } catch (e) {
-      // ignore
+      // ignore storage errors
     }
   }
 
@@ -31,34 +31,30 @@
 
   function applyTheme(theme) {
     const root = document.documentElement;
-    const btn = document.getElementById(toggleId);
+    const btn = document.getElementById(TOGGLE_ID);
 
-    if (theme === 'dark') {
-      root.classList.add(DARK_CLASS);
-    } else {
-      root.classList.remove(DARK_CLASS);
-    }
+    if (theme === 'dark') root.classList.add(DARK_CLASS);
+    else root.classList.remove(DARK_CLASS);
 
     if (btn) {
-      // show a simple icon — moon for light mode (to switch to dark), sun for dark mode (to switch to light)
-      btn.textContent = theme === 'dark' ? '☀️' : '🌙';
+      btn.textContent = 'Theme';
       btn.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+      btn.setAttribute('aria-label', theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
     }
   }
 
   function init() {
-    const btn = document.getElementById(toggleId);
+    const btn = document.getElementById(TOGGLE_ID);
     let theme = getStoredTheme();
 
-    if (!theme) {
-      theme = systemPrefersDark() ? 'dark' : 'light';
-    }
+    if (!theme) theme = systemPrefersDark() ? 'dark' : 'light';
 
     applyTheme(theme);
 
     if (!btn) return;
 
-    btn.addEventListener('click', function () {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
       const currentlyDark = document.documentElement.classList.contains(DARK_CLASS);
       const next = currentlyDark ? 'light' : 'dark';
       applyTheme(next);
@@ -66,7 +62,6 @@
     });
   }
 
-  // Run on DOMContentLoaded so the toggle button is present
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
   } else {
