@@ -13,6 +13,7 @@
   --accent: #2b8aef;
   --button-bg: #eef4ff;
   --border-color: rgba(0,0,0,0.08);
+  --strong-color: #232323;
 }
 
 /* Dark theme overrides (unchanged) */
@@ -26,6 +27,7 @@
   --accent: #4f9cff;
   --button-bg: #101214;
   --border-color: rgba(255,255,255,0.06);
+  --strong-color: #FFFFFF;
 }
 
 /* Apply variables site-wide (with !important to override main.css where needed) */
