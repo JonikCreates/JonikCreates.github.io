@@ -1,150 +1,192 @@
-<!DOCTYPE HTML>
-<html>
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<title>JonikCreates</title>
-		<link rel="stylesheet" href="assets/css/main.css" />
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="JonikCreates — Python and C++ developer building fast, thoughtful systems."
+    />
+    <meta name="theme-color" content="#050505" />
+    <title>JonikCreates — Python & C++ Developer</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2224%22 fill=%22%23050505%22/><text x=%2250%22 y=%2267%22 font-family=%22monospace%22 font-size=%2252%22 text-anchor=%22middle%22 fill=%22%23fff%22>J</text></svg>" />
+    <link rel="stylesheet" href="assets/css/site.css" />
+    <script>document.documentElement.classList.add("js");</script>
+  </head>
+  <body>
+    <div class="page-noise" aria-hidden="true"></div>
+    <div class="cursor-glow" aria-hidden="true"></div>
 
-		<!-- Apply stored/system theme as early as possible to avoid flash -->
-		<script>
-		  (function () {
-		    try {
-		      var t = localStorage.getItem('site-theme');
-		      if (t === 'dark') document.documentElement.classList.add('dark');
-		      else if (t === 'light') document.documentElement.classList.remove('dark');
-		      else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-		        document.documentElement.classList.add('dark');
-		      }
-		    } catch (e) { /* ignore */ }
-		  })();
-		</script>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="JonikCreates home">
+        <span class="brand-mark">J</span>
+        <span>JonikCreates</span>
+      </a>
 
-		<!-- Theme variables / overrides -->
-		<link rel="stylesheet" href="assets/css/theme-toggle.css" />
-	</head>
-	<body class="is-preload">
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="#work">Work</a>
+        <a href="#stack">Stack</a>
+        <a class="nav-contact" href="mailto:jonikatwork@outlook.com">Let’s talk</a>
+      </nav>
+    </header>
 
-		<!-- Content -->
-			<div id="content">
-				<div class="inner">
+    <main>
+      <section class="hero" id="top">
+        <div class="hero-copy" data-reveal>
+          <p class="eyebrow"><span class="status-dot"></span> Python / C++ Developer</p>
+          <h1>
+            I build things
+            <span>that think fast.</span>
+          </h1>
+          <p class="hero-intro">
+            Clean automation. Efficient systems. Thoughtful software built where
+            high-level intelligence meets low-level control.
+          </p>
 
-					<!-- Post -->
-						<article class="box post post-excerpt">
-							<header>
-								<h2><a href="#">Salutations!</a></h2>
-								<p>I'm Jonathan Koutin. Current BSIE Undergrad at the University of South Florida</p>
-							</header>
-							<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
-							<p>
-								<strong>Intrigued!?</strong> I've created this site to introduce myself and express my educational journey. Please feel free to ask me any questions
-							</p>
-							<p>
-								You can contact me at jonathankoutin@usf.edu or jonikatwork@outlook.com
-							</p>
-						</article>
+          <div class="hero-actions">
+            <a class="button button-primary" href="https://github.com/JonikCreates" target="_blank" rel="noreferrer">
+              Explore my work
+              <span aria-hidden="true">↗</span>
+            </a>
+            <a class="button button-quiet" href="#stack">See my stack</a>
+          </div>
 
-					<!-- Post -->
-						<article class="box post post-excerpt">
-							<header>
-								<h2><a href="#">Another Section</a></h2>
-								<p>Use this section to highlight a project, post, or an update</p>
-							</header>
-							<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
-							<p>
-								We'll see soon...
-							</p>
-						</article>
+          <div class="hero-meta" aria-label="Core technologies">
+            <span>PY</span>
+            <i></i>
+            <span>Python</span>
+            <i></i>
+            <span>C++</span>
+            <i></i>
+            <span>CPP</span>
+          </div>
+        </div>
 
-					<!-- Pagination (keep or remove) -->
-						<div class="pagination">
-							<div class="pages">
-								<a href="#" class="active">1</a>
-								<a href="#">2</a>
-								<a href="#">3</a>
-							</div>
-							<a href="#" class="button next">Next Page</a>
-						</div>
+        <div class="hero-visual" data-reveal data-delay="1">
+          <div class="orbit orbit-one" aria-hidden="true"></div>
+          <div class="orbit orbit-two" aria-hidden="true"></div>
 
-				</div>
-			</div>
+          <figure class="face-shell" data-tilt>
+            <img
+              src="assets/images/jonik-face.png"
+              alt="A dark futuristic human-machine face lit in blue and amber"
+              width="1024"
+              height="1536"
+              fetchpriority="high"
+            />
+            <div class="face-vignette" aria-hidden="true"></div>
+            <figcaption>
+              <span class="scan-label"><i></i> SYSTEM ONLINE</span>
+              <span class="scan-id">JNK / 001</span>
+            </figcaption>
+          </figure>
 
-		<!-- Sidebar -->
-			<div id="sidebar">
+          <div class="glass-chip chip-python" aria-hidden="true">
+            <span>01</span>
+            <strong>python.py</strong>
+            <code>build(idea)</code>
+          </div>
 
-				<!-- Logo -->
-					<h1 id="logo"><a href="#">JonikCreates</a></h1>
+          <div class="glass-chip chip-cpp" aria-hidden="true">
+            <span>02</span>
+            <strong>core.cpp</strong>
+            <code>run_fast();</code>
+          </div>
+        </div>
 
-					<!-- Theme toggle button (placed next to the logo) -->
-					<button id="theme-toggle" class="button" aria-label="Toggle theme" aria-pressed="false">Theme</button>
+        <a class="scroll-cue" href="#work" aria-label="Scroll to selected work">
+          <span>Scroll</span>
+          <i></i>
+        </a>
+      </section>
 
-				<!-- Nav -->
-					<nav id="nav">
-						<ul>
-							<li class="current"><a href="#">Home</a></li>
-							<li><a href="#">Projects</a></li>
-							<li><a href="#">About</a></li>
-							<li><a href="#">Contact</a></li>
-						</ul>
-					</nav>
+      <section class="section work-section" id="work">
+        <div class="section-heading" data-reveal>
+          <p class="section-kicker">Selected work</p>
+          <h2>Small footprint.<br />Real utility.</h2>
+        </div>
 
-				<!-- Search (optional) -->
-					<section class="box search">
-						<form method="post" action="#">
-							<input type="text" class="text" name="search" placeholder="Search" />
-						</form>
-					</section>
+        <a
+          class="project-card"
+          href="https://github.com/JonikCreates/System-Auto-Checker"
+          target="_blank"
+          rel="noreferrer"
+          data-reveal
+          data-delay="1"
+        >
+          <div class="project-index">01</div>
+          <div class="project-copy">
+            <div class="project-topline">
+              <span>Featured system</span>
+              <span>View on GitHub ↗</span>
+            </div>
+            <h3>System Auto Checker</h3>
+            <p>
+              A Windows-focused optimization tool beginning with safe,
+              programmatic display settings management.
+            </p>
+            <div class="project-tags">
+              <span>Automation</span>
+              <span>Windows</span>
+              <span>System tooling</span>
+            </div>
+          </div>
+          <div class="project-signal" aria-hidden="true">
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+        </a>
+      </section>
 
-				<!-- About text -->
-					<section class="box text-style1">
-						<div class="inner">
-							<p>
-								I hope to fill this site with my personal and educational ventures.
-							</p>
-						</div>
-					</section>
+      <section class="section stack-section" id="stack">
+        <div class="section-heading" data-reveal>
+          <p class="section-kicker">Core stack</p>
+          <h2>Two languages.<br />One sharp toolkit.</h2>
+        </div>
 
-				<!-- Recent Posts -->
-					<section class="box recent-posts">
-						<header>
-							<h2>Recent Posts</h2>
-						</header>
-						<ul>
-							<li><a href="#">Post or project title</a></li>
-							<li><a href="#">Another post</a></li>
-							<li><a href="#">And another one</a></li>
-						</ul>
-					</section>
+        <div class="stack-grid">
+          <article class="stack-card python-card" data-reveal>
+            <div class="stack-icon" aria-hidden="true">PY</div>
+            <div>
+              <p class="stack-number">01 / HIGH LEVEL</p>
+              <h3>Python</h3>
+              <p>
+                Fast iteration for automation, data, and intelligent workflows.
+              </p>
+            </div>
+            <code>def make_it_work():</code>
+          </article>
 
-				<!-- Recent Comments -->
-					<section class="box recent-comments">
-						<header>
-							<h2>Recent Comments</h2>
-						</header>
-						<ul>
-							<li>Someone on <a href="#">Post title</a></li>
-						</ul>
-					</section>
+          <article class="stack-card cpp-card" data-reveal data-delay="1">
+            <div class="stack-icon" aria-hidden="true">++</div>
+            <div>
+              <p class="stack-number">02 / LOW LEVEL</p>
+              <h3>C++</h3>
+              <p>
+                Precise control for performance, systems, and dependable tools.
+              </p>
+            </div>
+            <code>auto make_it_fast();</code>
+          </article>
+        </div>
+      </section>
 
-				<!-- Copyright -->
-					<ul id="copyright">
-						<li>&copy; 2025 JonikCreates.</li><li>Site by JonikCreates</li>
-					</ul>
+      <section class="contact-section" data-reveal>
+        <div>
+          <p class="section-kicker">Start a conversation</p>
+          <h2>Have an idea?</h2>
+        </div>
+        <a href="mailto:jonikatwork@outlook.com">
+          <span>jonikatwork@outlook.com</span>
+          <i aria-hidden="true">↗</i>
+        </a>
+      </section>
+    </main>
 
-			</div>
+    <footer>
+      <p>© <span id="year">2026</span> JonikCreates</p>
+      <p>Built around Python <span>+</span> C++</p>
+    </footer>
 
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-			<!-- Theme toggle script -->
-			<script src="assets/js/theme-toggle.js"></script>
-
-	</body>
+    <script src="assets/js/site.js"></script>
+  </body>
 </html>
-```
-
-
