@@ -570,6 +570,12 @@ footer {
     linear-gradient(145deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.015));
 }
 
+.keeper-card {
+  background:
+    radial-gradient(circle at 85% 30%, rgba(117, 140, 97, 0.16), transparent 32%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.015));
+}
+
 .racksmith-card .project-signal span {
   background: linear-gradient(to top, rgba(207, 166, 74, 0.1), rgba(207, 166, 74, 0.9));
   box-shadow: 0 0 18px rgba(207, 166, 74, 0.18);
@@ -578,6 +584,11 @@ footer {
 .shiro-card .project-signal span {
   background: linear-gradient(to top, rgba(166, 56, 46, 0.1), rgba(213, 85, 71, 0.9));
   box-shadow: 0 0 18px rgba(166, 56, 46, 0.2);
+}
+
+.keeper-card .project-signal span {
+  background: linear-gradient(to top, rgba(117, 140, 97, 0.1), rgba(184, 205, 157, 0.9));
+  box-shadow: 0 0 18px rgba(117, 140, 97, 0.22);
 }
 
 .project-index {
